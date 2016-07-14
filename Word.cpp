@@ -11,7 +11,7 @@
 #include <string>
 
 Word::Word() {
-	english = "";
+	english = ""; // results in \0
 	klingon = "";
 }
 

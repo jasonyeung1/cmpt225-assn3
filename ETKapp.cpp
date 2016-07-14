@@ -14,7 +14,7 @@
 
 using namespace std;
 
-bool readDataFile(const char* filename) {
+bool readDataFile(const char* filename, BSTADT* TranslatorLib) {
 	ifstream myfile (filename);
 	if (myfile.is_open())
 	{
@@ -23,8 +23,24 @@ bool readDataFile(const char* filename) {
 	string line;
 	while ( getline (myfile,line) )
 	{
-	    // add word into translator lib
-		cout << line << "\n";
+			// prepare current line for insertion
+			int i = 0;
+			bool passedcolon = false;
+			string EngWrd, KlngWrd;
+			while (line[i] != '\0') {
+				if (line[i] == ':') { passedcolon = true; }
+				else {
+					if (!passedcolon) { EngWrd += line[i]; }
+					else { KlngWrd += line[i]; }
+				}
+				i++;
+			}
+
+			// add word into translator lib
+			Word* newVocab = new Word(EngWrd, KlngWrd);
+			
+
+			cout << line << "\n";
 	}
 	cout << "----------------------------------" << endl;
 	cout << "DATAFILE END\n" << endl;
@@ -40,7 +56,7 @@ int main() {
 	BSTADT* TranslatorLib = new BSTADT();
 
   // if data file can be read and stored
-	if ( readDataFile("dataFile.txt") ) {
+	if ( readDataFile("dataFile.txt", TranslatorLib) ) {
 
 	  cout << "Type an English word to preview the Klingon translation if found." << endl;
 	  cout << "Type 'Display' to preview all words in the translator." << endl;
@@ -51,6 +67,8 @@ int main() {
         stringstream ss(aLine);
         ss << aLine << ":";
         // Do the translation
+
+						//string klingonword = TranslatorLib->findNode(aLine)
 
 				cout << ss.str() << endl;
     }

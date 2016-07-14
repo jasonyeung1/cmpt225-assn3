@@ -7,14 +7,19 @@
  * Creation date: July 7, 2016
  * Author: Jason Yeung, Bob Tian
  */
-#include <string>
 #include "Node.h"
 #include "BSTADT.h"
 
 BSTADT::BSTADT() {
+  rootPtr = NULL;
   numberofelements = 0;
 }
 
-Node* BSTADT::insertInorder(const Word& newEntry) {
+Node* BSTADT::insert(const Word& newEntry) {
+  Node* newNode = new Node(newEntry);
+  numberofelements++;
+}
 
+int BSTADT::getnumberofelements() const {
+  return numberofelements;
 }

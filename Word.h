@@ -14,7 +14,6 @@ using namespace std;
 class Word {
 
 private:
-
 	string english;
  	string klingon;
 

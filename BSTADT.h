@@ -24,11 +24,11 @@ public:
   //BinarySearchTree( const Word& rootItem);
   //BinarySearchTree( const BinarySearchTree& tree);
 
-  Node* insertInorder(const Word& newEntry);
+  Node* insert(const Word& newEntry);
 
   // Returns a pointer to the node containing the given value,
   // or nullptr if not found.
-  Node* findNode(Node* treePtr, const Word& target) const ;
+  Node* findNode(const Word& target) const ;
 
   int getnumberofelements() const ;
 };
