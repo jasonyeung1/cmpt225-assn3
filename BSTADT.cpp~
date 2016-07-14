@@ -10,7 +10,7 @@
 
 #include "BSTADT.h"
 
-Node rootPtr = NULL;
+rootPtr = NULL;
 
 //bool BSTADT::add(const Word& newEntry) {
 Node* BSTADT::add(const Word& newEntry) {

@@ -6,6 +6,7 @@
  * Creation date: July 7, 2016
  * Author: Jason Yeung, Bob Tian
  */
+#include "Word.h"
 
 #pragma once
 class Word {

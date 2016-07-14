@@ -10,8 +10,8 @@
 #include "Word.h"
 
 Word::Word() {
-	english = "-1";
-	klingon = "-1";
+	english = "nil";
+	klingon = "nil";
 
 }
 
