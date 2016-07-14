@@ -8,7 +8,6 @@
  * Author: Jason Yeung, Bob Tian
  */
 #include "Node.h"
-#include "BSTADT.h"
 
 //i got this from the textbook
 //theres a lot of functions we dont need but i left it in for now

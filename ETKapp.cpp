@@ -7,11 +7,9 @@
 
 #include <iostream>
 #include <fstream>
-#include <sstream>
 #include <string>
-//#include "BSTADT.h"
-//#include "Node.h"
-//#include "Word.h"
+#include "BSTADT.h"
+#include "Word.h"
 
 using namespace std;
 
