@@ -1,6 +1,6 @@
 /*
  * filename: EKTapp.cpp
- * 
+ *
  * Created on: July 7, 2016
  * Author: Jason Yeung, Bob Tian
  */
@@ -39,18 +39,21 @@ bool readDataFile(const char* filename) {
 int main() {
 	BSTADT* TranslatorLib = new BSTADT();
 
-    // if data file can be read and stored
-	if ( readDataFile("datafile.txt") ) {
-	    
-	    cout << "Type an English word to preview the Klingon translation if found."
-	    cout << 'Type "Display" to preview all words in the translator.'
+  // if data file can be read and stored
+	if ( readDataFile("dataFile.txt") ) {
+
+	  cout << "Type an English word to preview the Klingon translation if found." << endl;
+	  cout << "Type 'Display' to preview all words in the translator." << endl;
 		cout << "INPUT READY: " << endl;
-		
+
 		string aLine;
-        while(getline(cin, aLine)) {   // while (there is data)
-            stringstream ss(aLine);
-            // ss >> <some variable>;  
-            // Do the translation.
-        }
+    while(getline(cin, aLine)) {   // while (there is data)
+        stringstream ss(aLine);
+        ss << aLine << ":";
+        // Do the translation
+
+				cout << ss.str() << endl;
+    }
 	}
+	cout << "PROG END" << endl;
 }

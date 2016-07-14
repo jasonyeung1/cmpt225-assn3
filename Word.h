@@ -1,30 +1,31 @@
 /*
  * filename: Word.h
- * 
+ *
  * Class Description:
  *
  * Creation date: July 7, 2016
  * Author: Jason Yeung, Bob Tian
  */
-
+#include <string>
 #pragma once
+
+using namespace std;
+
 class Word {
 
 private:
-	
-	char english;
- 	char klingon;
+
+	string english;
+ 	string klingon;
 
 public:
 	// default constructor
 	Word();
-	
+
 	// constructor w/ input
-	Word(char inpenglish, char inpklingon);	
-	
+	Word(string inpenglish, string inpklingon);
+
 	// get the translation
-	char getEnglish() const;
-	char getKlingon() const;
-
+	string getEnglish() const;
+	string getKlingon() const;
 };
-

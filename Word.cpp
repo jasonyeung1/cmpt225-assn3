@@ -1,6 +1,6 @@
 /*
  * filename: Word.cpp
- * 
+ *
  * Class Description:
  *
  * Creation date: July 7, 2016
@@ -8,22 +8,22 @@
  */
 
 #include "Word.h"
+#include <string>
 
 Word::Word() {
-	english = "NO_VAL";
-	klingon = "NO_VAL";
+	english = "";
+	klingon = "";
 }
 
-Word::Word(char inpenglish, char inpklingon) {
+Word::Word(string inpenglish, string inpklingon) {
 	english = inpenglish;
-    klingon = inpklingon;
+  klingon = inpklingon;
 }
 
-char Word::getEnglish() const {
+string Word::getEnglish() const {
 	return english;
 }
 
-char Word::getKlingon() const {
+string Word::getKlingon() const {
 	return klingon;
 }
-
