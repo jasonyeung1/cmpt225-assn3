@@ -1,2 +1,2 @@
 makeapp:
-	g++ ETKapp.cpp BSTADT.cpp  Node.cpp Word.cpp -o etkapp
+	g++ EKTapp.cpp BSTADT.h  Node.h Word.cpp -o etkapp
