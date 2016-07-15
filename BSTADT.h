@@ -17,7 +17,7 @@ private:
   int numberofelements;
 
   // Recursive function to insert nodes into BST
-  Node* insert(const Node* newNode);
+  Node* insert(Node* newNode);
 
 
 public:

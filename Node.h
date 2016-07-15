@@ -18,17 +18,22 @@ private:
   Node *rightChildPtr;
 
 public:
-
+  // Constructors
   Node();
   Node(const Word& anItem);
 
+  // Set data to the node
   void setItem(const Word& anItem);
+
+  // Retrieve the data from the node
   Word* getItem();
 
-  Node* getLeftChildPtr() const ;
-  Node* getRightChildPtr() const ;
+  // Retrieve Left/Right pointers
+  Node* getLeft() const ;
+  Node* getRight() const ;
 
-  void setLeftChildPtr(Node* leftPtr);
-  void setRightChildPtr(Node* rightPtr);
+  // Set Left/Right pointers
+  void setLeft(Node* leftPtr);
+  void setRight(Node* rightPtr);
 
 };

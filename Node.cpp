@@ -27,18 +27,18 @@ Word* Node::getItem() {
   return &data;
 }
 
-Node* Node::getLeftChildPtr() const {
+Node* Node::getLeft() const {
   return leftChildPtr;
 }
 
-Node* Node::getRightChildPtr() const {
+Node* Node::getRight() const {
   return rightChildPtr;
 }
 
-void Node::setLeftChildPtr(Node* leftPtr) {
+void Node::setLeft(Node* leftPtr) {
   leftChildPtr = leftPtr;
 }
 
-void Node::setRightChildPtr(Node* rightPtr) {
+void Node::setRight(Node* rightPtr) {
   leftChildPtr = rightPtr;
 }
