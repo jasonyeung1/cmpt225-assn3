@@ -18,7 +18,8 @@ BSTADT::BSTADT() {
   numberofelements = 0;
 }
 
-Node* BSTADT::insert(Node* newNode) {
+Node* BSTADT::insert(Node* newNode, Node* currentNode) {
+
 
 }
 
@@ -28,7 +29,7 @@ Node* BSTADT::add(const Word& newEntry) {
   numberofelements++;
 
   // insert it recursively
-  insert(newNode);
+  insert(newNode, rootPtr);
 }
 
 int BSTADT::getnumberofelements() const {

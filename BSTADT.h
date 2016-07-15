@@ -17,7 +17,7 @@ private:
   int numberofelements;
 
   // Recursive function to insert nodes into BST
-  Node* insert(Node* newNode);
+  Node* insert(Node* newNode, Node* currentNode);
 
 
 public:
@@ -25,8 +25,6 @@ public:
   // Constructor and Destructor Section.
   //------------------------------------------------------------
   BSTADT();
-  //BinarySearchTree( const Word& rootItem);
-  //BinarySearchTree( const BinarySearchTree& tree);
 
   Node* add(const Word& newEntry);
 
