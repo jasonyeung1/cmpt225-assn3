@@ -21,6 +21,8 @@ BSTADT::BSTADT() {
 Node* BSTADT::insert(Node* newNode, Node* currentNode) {
     if (rootPtr == NULL) {
       rootPtr = newNode;
+      numberofelements++;
+      return newNode;
     }
     else {
       string newWrd, curWrd;
@@ -33,21 +35,42 @@ Node* BSTADT::insert(Node* newNode, Node* currentNode) {
       }
       // move right
       else if (newWrd > curWrd) {
-          if (currentNode->getRight() != NULL) { insert(newNode, currentNode->getRight()); //cout << "moving right" << endl; }
+          if (currentNode->getRight() != NULL) { insert(newNode, currentNode->getRight()); } //cout << "moving right" << endl;
           else {
               //cout << "set right" << endl;
               currentNode->setRight(newNode);
+              numberofelements++;
               return newNode;
           }
       }
       // move left
       else if (newWrd < curWrd) {
-          if (currentNode->getLeft() != NULL) { insert(newNode, currentNode->getLeft()); //cout << "moving left" << endl; }
+          if (currentNode->getLeft() != NULL) { insert(newNode, currentNode->getLeft()); } //cout << "moving left" << endl;
           else {
             cout << "set left" << endl;
             currentNode->setLeft(newNode);
+            numberofelements++;
             return newNode;
           }
+      }
+    }
+
+    return NULL;
+}
+
+Node* BSTADT::seek(string target, Node* currentNode) {
+
+    if (getnumberofelements() != 0 && currentNode != NULL) {
+      string curWrd = currentNode->getItem()->getEnglish();
+
+      if (curWrd == target) {
+        return currentNode;
+      }
+      else if (target > curWrd) {
+        return seek(target, currentNode->getRight());
+      }
+      else if (target < curWrd) {
+        return seek(target, currentNode->getLeft());
       }
     }
 
@@ -61,6 +84,16 @@ Node* BSTADT::add(const Word& newEntry) {
 
   // insert it recursively
   insert(newNode, rootPtr);
+}
+
+string BSTADT::retrieve(string engWrd) {
+    Node* translated = seek(engWrd, rootPtr);
+    if (translated) {
+      return translated->getItem()->getKlingon();
+    }
+    else {
+      return "NOT FOUND";
+    }
 }
 
 int BSTADT::getnumberofelements() const {

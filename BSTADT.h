@@ -19,6 +19,9 @@ private:
   // Recursive function to insert nodes into BST
   Node* insert(Node* newNode, Node* currentNode);
 
+  // Recursive function to find nodes in BST
+  Node* seek(string target, Node* currentNode);
+
 
 public:
   //------------------------------------------------------------
@@ -26,11 +29,14 @@ public:
   //------------------------------------------------------------
   BSTADT();
 
+  // adds/inserts the word into the BST
+  // returns the inserted node with the value
+  // if element is already in, return NULL
   Node* add(const Word& newEntry);
 
-  // Returns a pointer to the node containing the given value,
-  // or nullptr if not found.
-  Node* findNode(const Word& target) const ;
+  // Returns a the translated word to the node containing the given value,
+  // or "NOT FOUND" if not found
+  string retrieve(string engWrd);
 
   int getnumberofelements() const ;
 };

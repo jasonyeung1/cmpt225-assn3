@@ -74,9 +74,7 @@ int main() {
 				// else, find the translation and only display that
 				else {
 	        stringstream ss(aLine);
-	        ss << aLine << ":";
-	        // Do the translation
-					//string klingonword = TranslatorLib->findNode(aLine)
+	        ss << aLine << ": " << TranslatorLib->retrieve(aLine);
 
 					cout << ss.str() << endl;
 			}
