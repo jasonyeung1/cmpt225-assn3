@@ -69,7 +69,7 @@ int main() {
     while(getline(cin, aLine)) {   // while (there is data)
 				// display all translations
 				if (aLine == "display") {
-
+					TranslatorLib->print();
 				}
 				// else, find the translation and only display that
 				else {

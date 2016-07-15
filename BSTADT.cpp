@@ -29,9 +29,9 @@ Node* BSTADT::insert(Node* newNode, Node* currentNode) {
       newWrd = newNode->getItem()->getEnglish();
       curWrd = currentNode->getItem()->getEnglish();
 
-      // element already inside, throw exception
+      // element already inside
       if (curWrd == newWrd) {
-        cout << "Element already inside." << endl;
+        cout << "~> ERROR: ELEMENT ALREADY EXISTS -- IGNORING" << endl;
       }
       // move right
       else if (newWrd > curWrd) {
@@ -47,7 +47,7 @@ Node* BSTADT::insert(Node* newNode, Node* currentNode) {
       else if (newWrd < curWrd) {
           if (currentNode->getLeft() != NULL) { insert(newNode, currentNode->getLeft()); } //cout << "moving left" << endl;
           else {
-            cout << "set left" << endl;
+            // cout << "set left" << endl;
             currentNode->setLeft(newNode);
             numberofelements++;
             return newNode;
@@ -77,6 +77,16 @@ Node* BSTADT::seek(string target, Node* currentNode) {
     return NULL;
 }
 
+void BSTADT::print_all(Node* currentNode) {
+    if (currentNode != NULL) {
+      print_all(currentNode->getLeft());
+
+      cout << currentNode->getItem()->getEnglish() << ":" << currentNode->getItem()->getKlingon() << endl;
+
+      print_all(currentNode->getRight());
+    }
+};
+
 Node* BSTADT::add(const Word& newEntry) {
   // create a new node to be inserted
   Node* newNode = new Node(newEntry);
@@ -95,6 +105,10 @@ string BSTADT::retrieve(string engWrd) {
       return "NOT FOUND";
     }
 }
+
+void BSTADT::print() {
+  print_all(rootPtr);
+};
 
 int BSTADT::getnumberofelements() const {
   return numberofelements;

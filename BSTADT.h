@@ -22,6 +22,9 @@ private:
   // Recursive function to find nodes in BST
   Node* seek(string target, Node* currentNode);
 
+  // Recursive function to print
+  void print_all(Node* currentNode);
+
 
 public:
   //------------------------------------------------------------
@@ -38,5 +41,9 @@ public:
   // or "NOT FOUND" if not found
   string retrieve(string engWrd);
 
+  // Prints all values in the translator
+  void print();
+
+  // Gets number of elements
   int getnumberofelements() const ;
 };
