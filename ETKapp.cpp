@@ -72,7 +72,7 @@ int main() {
 					TranslatorLib->print();
 				}
 				// else, find the translation and only display that
-				else {
+				else if (aLine != "") {
 	        stringstream ss(aLine);
 	        ss << aLine << ": " << TranslatorLib->retrieve(aLine);
 
