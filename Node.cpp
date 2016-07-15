@@ -10,6 +10,9 @@
 #include <string>
 #include "Node.h"
 #include "Word.h"
+#include <iostream>
+
+using namespace std;
 
 Node::Node() {
 }
@@ -40,5 +43,5 @@ void Node::setLeft(Node* leftPtr) {
 }
 
 void Node::setRight(Node* rightPtr) {
-  leftChildPtr = rightPtr;
+  rightChildPtr = rightPtr;
 }

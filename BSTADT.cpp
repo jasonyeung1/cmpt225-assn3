@@ -19,8 +19,39 @@ BSTADT::BSTADT() {
 }
 
 Node* BSTADT::insert(Node* newNode, Node* currentNode) {
+    if (rootPtr == NULL) {
+      rootPtr = newNode;
+    }
+    else {
+      string newWrd, curWrd;
+      newWrd = newNode->getItem()->getEnglish();
+      curWrd = currentNode->getItem()->getEnglish();
 
+      // element already inside, throw exception
+      if (curWrd == newWrd) {
+        cout << "Element already inside." << endl;
+      }
+      // move right
+      else if (newWrd > curWrd) {
+          if (currentNode->getRight() != NULL) { insert(newNode, currentNode->getRight()); //cout << "moving right" << endl; }
+          else {
+              //cout << "set right" << endl;
+              currentNode->setRight(newNode);
+              return newNode;
+          }
+      }
+      // move left
+      else if (newWrd < curWrd) {
+          if (currentNode->getLeft() != NULL) { insert(newNode, currentNode->getLeft()); //cout << "moving left" << endl; }
+          else {
+            cout << "set left" << endl;
+            currentNode->setLeft(newNode);
+            return newNode;
+          }
+      }
+    }
 
+    return NULL;
 }
 
 Node* BSTADT::add(const Word& newEntry) {

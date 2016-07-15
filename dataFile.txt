@@ -1,6 +1,6 @@
-stop:mevyap
-food:Soj
-win:Qap
+a:mevyap
+b:Soj
+c:Qap
 conduit:'och
 today:jajvam
 face:qab
