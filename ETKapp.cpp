@@ -38,7 +38,7 @@ bool readDataFile(const char* filename, BSTADT* TranslatorLib) {
 
 			// add word into translator lib
 			Word* newVocab = new Word(EngWrd, KlngWrd);
-			TranslatorLib->insert(*newVocab);
+			TranslatorLib->add(*newVocab);
 
 			// print out line
 			cout << line << "\n";
@@ -62,17 +62,24 @@ int main() {
 
 	  cout << "Type an English word to preview the Klingon translation if found." << endl;
 	  cout << "Type 'Display' to preview all words in the translator." << endl;
+		cout << "Press 'CTRL-D' to quit the program." << endl;
 		cout << "INPUT READY: " << endl;
 
 		string aLine;
     while(getline(cin, aLine)) {   // while (there is data)
-        stringstream ss(aLine);
-        ss << aLine << ":";
-        // Do the translation
+				// display all translations
+				if (aLine == "display") {
 
-						//string klingonword = TranslatorLib->findNode(aLine)
+				}
+				// else, find the translation and only display that
+				else {
+	        stringstream ss(aLine);
+	        ss << aLine << ":";
+	        // Do the translation
+					//string klingonword = TranslatorLib->findNode(aLine)
 
-				cout << ss.str() << endl;
+					cout << ss.str() << endl;
+			}
     }
 	}
 	cout << "PROG END" << endl;

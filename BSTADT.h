@@ -16,6 +16,10 @@ private:
   Node* rootPtr;
   int numberofelements;
 
+  // Recursive function to insert nodes into BST
+  Node* insert(const Node* newNode);
+
+
 public:
   //------------------------------------------------------------
   // Constructor and Destructor Section.
@@ -24,7 +28,7 @@ public:
   //BinarySearchTree( const Word& rootItem);
   //BinarySearchTree( const BinarySearchTree& tree);
 
-  Node* insert(const Word& newEntry);
+  Node* add(const Word& newEntry);
 
   // Returns a pointer to the node containing the given value,
   // or nullptr if not found.
