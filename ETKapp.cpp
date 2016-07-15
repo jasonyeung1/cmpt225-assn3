@@ -38,10 +38,12 @@ bool readDataFile(const char* filename, BSTADT* TranslatorLib) {
 
 			// add word into translator lib
 			Word* newVocab = new Word(EngWrd, KlngWrd);
-			
+			TranslatorLib->insert(*newVocab);
 
+			// print out line
 			cout << line << "\n";
 	}
+
 	cout << "----------------------------------" << endl;
 	cout << "DATAFILE END\n" << endl;
 	myfile.close();

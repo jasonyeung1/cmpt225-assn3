@@ -11,36 +11,34 @@
 #include "Node.h"
 #include "Word.h"
 
-template <class ItemType>
-Node<ItemType>::Node() {
+Node::Node() {
 }
 
-template <class ItemType>
-Node<ItemType>::Node(const ItemType& anItem) {
+Node::Node(const Word& anItem) {
     data = anItem;
     leftChildPtr = rightChildPtr = NULL;
 }
-template <class ItemType>
-void Node<ItemType>::setItem(const ItemType& anItem) {
 
+void Node::setItem(const Word& anItem) {
+  data = anItem;
 }
-template <class ItemType>
-ItemType Node<ItemType>::getItem() const {
 
+Word* Node::getItem() {
+  return &data;
 }
-template <class ItemType>
-Node<ItemType>* Node<ItemType>::getLeftChildPtr() const {
 
+Node* Node::getLeftChildPtr() const {
+  return leftChildPtr;
 }
-template <class ItemType>
-Node<ItemType>* Node<ItemType>::getRightChildPtr() const {
 
+Node* Node::getRightChildPtr() const {
+  return rightChildPtr;
 }
-template <class ItemType>
-void Node<ItemType>::setLeftChildPtr(Node* leftPtr) {
 
+void Node::setLeftChildPtr(Node* leftPtr) {
+  leftChildPtr = leftPtr;
 }
-template <class ItemType>
-void Node<ItemType>::setRightChildPtr(Node* rightPtr) {
 
+void Node::setRightChildPtr(Node* rightPtr) {
+  leftChildPtr = rightPtr;
 }

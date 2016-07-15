@@ -9,27 +9,26 @@
 #include "Word.h"
 #pragma once
 
-template <class ItemType>
 class Node
 {
 
 private:
   Word data;
-  Node<ItemType> *leftChildPtr;
-  Node<ItemType> *rightChildPtr;
+  Node *leftChildPtr;
+  Node *rightChildPtr;
 
 public:
 
   Node();
-  Node(const ItemType& anItem);
+  Node(const Word& anItem);
 
-  void setItem(const ItemType& anItem);
-  ItemType getItem() const;
+  void setItem(const Word& anItem);
+  Word* getItem();
 
-  Node<ItemType>* getLeftChildPtr() const ;
-  Node<ItemType>* getRightChildPtr() const ;
+  Node* getLeftChildPtr() const ;
+  Node* getRightChildPtr() const ;
 
-  void setLeftChildPtr(Node<ItemType>* leftPtr);
-  void setRightChildPtr(Node<ItemType>* rightPtr);
+  void setLeftChildPtr(Node* leftPtr);
+  void setRightChildPtr(Node* rightPtr);
 
 };

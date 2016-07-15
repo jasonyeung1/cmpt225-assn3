@@ -10,24 +10,25 @@
 #include "Node.h"
 #include "Word.h"
 
-template <class ItemType>
-class BSTADT : public BSTADT <ItemType> {
+class BSTADT {
 
 private:
-  Node<ItemType>* rootPtr;
+  Node* rootPtr;
   int numberofelements;
 
 public:
-  
   //------------------------------------------------------------
   // Constructor and Destructor Section.
   //------------------------------------------------------------
   BSTADT();
-  BSTADT( const ItemType& rootItem);
-  BSTADT( const BSTADT<ItemType>& tree);
+  //BinarySearchTree( const Word& rootItem);
+  //BinarySearchTree( const BinarySearchTree& tree);
 
-  Node<ItemType>* insertInorder(const ItemType& newEntry);
+  Node* insert(const Word& newEntry);
+
+  // Returns a pointer to the node containing the given value,
+  // or nullptr if not found.
+  Node* findNode(const Word& target) const ;
 
   int getnumberofelements() const ;
-  
 };
